@@ -1,11 +1,11 @@
 export type NewsArticle = Readonly<{
-  id: string
-  title: string
-  publicationDate: Date
-  imageURL: string
+  category: string;
   /**
    * HTML string.
    */
-  content: string
-  category: string
+  content: string;
+  id: string;
+  imageURL: string;
+  publicationDate: Date;
+  title: string;
 }>;

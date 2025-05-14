@@ -3,7 +3,7 @@ import * as crous from "../src";
 // Replace with:  from "crowous";
 // when using the package.
 
-void async function main() {
+void (async function main() {
   const identifier = "limoges";
   const news = await crous.news(identifier);
 
@@ -12,4 +12,4 @@ void async function main() {
     // You can retrieve the HTML content of the article by using `article.content`.
     // We're not doing it here to avoid cluttering the console.
   }
-}();
+}());

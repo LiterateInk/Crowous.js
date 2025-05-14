@@ -1,10 +1,16 @@
-<img alt="Crowous: A wrapper for the Crous Mobile internal API" src="https://raw.githubusercontent.com/LiterateInk/Crowous/index/.github/assets/banner.svg" width="100%" />
+<img alt="Crowous: A wrapper for the Crous Mobile internal API" src="https://raw.githubusercontent.com/LiterateInk/Crowous.js/main/.github/assets/banner.svg" width="100%" />
 
-*This library **is not** affiliated with [Les Crous](https://www.lescrous.fr/) in any way.*
+_This library **is not** affiliated with [&nearr;&nbsp;Les Crous](https://www.lescrous.fr/) in any way._
+
+## What is "Les Crous" ?
+
+[&nearr;&nbsp;Les Crous](https://www.lescrous.fr/) (or _Centres Régionaux des Œuvres Universitaires et Scolaires_) in France are regional organizations that provide various services to students to enhance their quality of life.
+
+[&nearr;&nbsp;Les Crous' mobile app](https://play.google.com/store/apps/details?id=com.einden.crous.poitiers.android) facilitates student life by providing access to housing applications, meal plan management, scholarship information, and various support services directly from their smartphones.
 
 ## Installation
 
-Use your favorite package manager to install this library from NPM.
+Use your favorite package manager to install this library from the npm registry.
 
 ```bash
 # pnpm
@@ -20,10 +26,24 @@ npm add crowous
 bun add crowous
 ```
 
-## Documentation
+## Quick Start
 
-You can find documentation with guides at [docs.literate.ink/crowous](https://docs.literate.ink/crowous).
+```typescript
+import * as crous from "crowous";
 
-If it's not enough you can also take a look at the [`examples`](https://github.com/LiterateInk/Crowous/tree/js/examples) folder in the GitHub repository for inspiration.
+// Note that you don't have to be authenticated to use this library.
+const feeds = await crous.feeds();
 
-If none of those are helpful, you can always [open an issue](https://github.com/LiterateInk/Crowous/issues) to ask for help or join the [LiterateInk Discord server](https://literate.ink/discord).
+// Let's list all the feeds !
+for (const feed of feeds) {
+  console.log(`${feed.name} (${feed.identifier})`);
+}
+```
+
+You can find guides at [**&nearr;&nbsp;crowous.docs.literate.ink**](https://crowous.docs.literate.ink) and if it's not enough you can also take a look at the [**&nearr;&nbsp;examples** directory on the GitHub repository](https://github.com/LiterateInk/Crowous.js/tree/main/examples) for inspiration.
+
+If none of those are helpful, you can always [&nearr;&nbsp;open an issue](https://github.com/LiterateInk/Crowous.js/issues) to ask for help or join the [&nearr;&nbsp;LiterateInk Discord server](https://literate.ink/discord).
+
+## License
+
+This project is licensed under the GPL-3.0 License - see the [LICENSE.md](LICENSE.md) file for details.

@@ -5,8 +5,8 @@ export const decodeFeed = (feed: any): Feed => {
   const identifier = feed.url.split("/")[4];
 
   return {
-    name,
     identifier,
-    isDefault: feed.is_default
+    isDefault: feed.is_default,
+    name
   };
 };

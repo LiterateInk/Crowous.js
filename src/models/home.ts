@@ -1,23 +1,23 @@
 export type Home = Readonly<{
-  fullInformationHTML: string
-  localServicesHTML: string
-  contactHTML: string
-  address: string | null
-  email: string
-  phone: string | null
-  websiteURL: string | null
-  appointmentURL: string | null
-  virtualVisitURL: string | null
-  crousAndGoURL: string | null
-  albumURL: string | null
-  bookingURL: string | null
-  troubleshootingURL: string | null
-  inHomeServices: string[]
-  images: string[]
-  id: string
-  title: string
-  shortDescription: string | null
-  latitude: number
-  longitude: number
-  area: string
+  address: null | string;
+  albumURL: null | string;
+  appointmentURL: null | string;
+  area: string;
+  bookingURL: null | string;
+  contactHTML: string;
+  crousAndGoURL: null | string;
+  email: string;
+  fullInformationHTML: string;
+  id: string;
+  images: string[];
+  inHomeServices: string[];
+  latitude: number;
+  localServicesHTML: string;
+  longitude: number;
+  phone: null | string;
+  shortDescription: null | string;
+  title: string;
+  troubleshootingURL: null | string;
+  virtualVisitURL: null | string;
+  websiteURL: null | string;
 }>;

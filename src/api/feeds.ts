@@ -1,12 +1,14 @@
-import { type Fetcher, defaultFetcher } from "@literate.ink/utilities";
-import { Request } from "~/core/request";
-import { decodeFeed } from "~/decoders/feed";
 import type { Feed } from "~/models";
+import { HttpRequest, send } from "schwi";
+import { BASE_URL } from "~/core/constans";
+import { decodeFeed } from "~/decoders/feed";
 
-export const feeds = async (fetcher: Fetcher = defaultFetcher): Promise<Array<Feed>> => {
-  const request = new Request("feeds.json");
-  const { content } = await fetcher(request);
-  const { results } = JSON.parse(content);
+export const feeds = async (): Promise<Array<Feed>> => {
+  const request = new HttpRequest.Builder(BASE_URL + "feeds.json").build();
+  const response = await send(request);
+  const { results } = await response.toJSON<{
+    results: Array<any>;
+  }>();
 
   return results.map(decodeFeed);
 };

@@ -1,25 +1,25 @@
-import type { RestaurantKind, Contact, Image, PaymentMethod, Menu } from "~/models";
+import type { Contact, Image, Menu, PaymentMethod, RestaurantKind } from "~/models";
 
 export type Restaurant = Readonly<{
-  id: number,
-  title: string,
-  latitude: number,
-  longitude: number,
-  area: string,
-  address: string,
-  opening: string,
-  closing: string,
-  kind: RestaurantKind,
-  accessibility: boolean,
-  wifi: boolean,
-  shortDescription: string,
-  description: string,
-  access: string,
-  operationalHours: string,
-  contact: Contact,
-  crousAndGo: string,
-  album: Image | undefined,
-  photo: Image,
-  paymentMethods: Array<PaymentMethod>,
-  menus: Array<Menu>
+  access: string;
+  accessibility: boolean;
+  address: string;
+  album: Image | undefined;
+  area: string;
+  closing: string;
+  contact: Contact;
+  crousAndGo: string;
+  description: string;
+  id: number;
+  kind: RestaurantKind;
+  latitude: number;
+  longitude: number;
+  menus: Array<Menu>;
+  opening: string;
+  operationalHours: string;
+  paymentMethods: Array<PaymentMethod>;
+  photo: Image;
+  shortDescription: string;
+  title: string;
+  wifi: boolean;
 }>;

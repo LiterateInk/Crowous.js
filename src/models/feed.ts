@@ -1,5 +1,5 @@
 export type Feed = Readonly<{
-  name: string
-  identifier: string
-  isDefault: boolean
+  identifier: string;
+  isDefault: boolean;
+  name: string;
 }>;

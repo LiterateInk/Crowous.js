@@ -2,11 +2,24 @@
   "name": "crowous",
   "version": "1.3.0",
   "description": "A wrapper for the Crous Mobile internal API.",
-  "repository": "https://github.com/LiterateInk/Crowous",
+  "author": "LiterateInk <contact@literate.ink> (https://literate.ink)",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://crowous.docs.literate.ink/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiterateInk/Crowous.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LiterateInk/Crowous.js/issues"
+  },
+  "keywords": [
+    "crous",
+    "restaurant",
+    "wrapper",
+    "university",
+    "api"
+  ],
   "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "exports": {
     "import": {
       "types": "./dist/index.d.mts",
@@ -17,39 +30,27 @@
       "default": "./dist/index.js"
     }
   },
-  "scripts": {
-    "build": "tsup",
-    "checks": "tsc && eslint ."
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "keywords": [
-    "crous",
-    "restaurant",
-    "wrapper",
-    "university",
-    "api"
-  ],
-  "author": "LiterateInk <contact@literate.ink> (https://literate.ink)",
-  "homepage": "https://docs.literate.ink/crowous",
-  "bugs": {
-    "url": "https://github.com/LiterateInk/Crowous/issues"
-  },
-  "license": "GPL-3.0-or-later",
-  "engines": {
-    "node": ">=18"
-  },
-  "devDependencies": {
-    "@stylistic/eslint-plugin": "^2.6.2",
-    "@typescript-eslint/parser": "^8.0.1",
-    "eslint": "^9.9.0",
-    "terser": "^5.31.5",
-    "tsup": "^8.2.4",
-    "typescript": "^5.5.4"
+  "scripts": {
+    "build": "tsup"
   },
   "dependencies": {
-    "@literate.ink/utilities": "1.0.0-10641118381.1",
-    "fast-xml-parser": "^4.5.0"
+    "fast-xml-parser": "^5.2.3",
+    "schwi": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.13",
+    "@vexcited/eslint-config": "^0.1.1",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.26.0",
+    "jiti": "^2.4.2",
+    "terser": "^5.39.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   }
 }

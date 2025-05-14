@@ -19,8 +19,8 @@ export const decodeMeal = (meal: any): Meal => {
     });
 
   return {
-    moment: decodeMoment(meal.name),
+    categories,
     information,
-    categories
+    moment: decodeMoment(meal.name)
   };
 };

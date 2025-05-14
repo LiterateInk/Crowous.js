@@ -1,7 +1,7 @@
-import type { Moment, MealCategory } from "~/models";
+import type { MealCategory, Moment } from "~/models";
 
 export type Meal = Readonly<{
-  moment: Moment,
-  information: string | undefined,
-  categories: Array<MealCategory>
+  categories: Array<MealCategory>;
+  information: string | undefined;
+  moment: Moment;
 }>;

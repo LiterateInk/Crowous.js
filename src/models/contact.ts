@@ -1,4 +1,4 @@
 export type Contact = Readonly<{
-  phone: string
-  email: string
+  email: string;
+  phone: string;
 }>;

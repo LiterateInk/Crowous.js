@@ -1,15 +1,16 @@
-import { defaultFetcher, type Fetcher } from "@literate.ink/utilities";
-import { Request } from "~/core/request";
+import { HttpRequest, send } from "schwi";
+import { BASE_URL } from "~/core/constans";
 import { decodeRestaurant } from "~/decoders/restaurant";
 import { type Meal, Moment, type Restaurant } from "~/models";
 
-export const restaurants = async (identifier: string, fetcher: Fetcher = defaultFetcher): Promise<Array<Restaurant>> => {
-  const request = new Request(`${identifier}/externe/crous-${identifier}.min.json`);
-  const response = await fetcher(request);
+export const restaurants = async (identifier: string): Promise<Array<Restaurant>> => {
+  const request = new HttpRequest.Builder(BASE_URL + `${identifier}/externe/crous-${identifier}.min.json`).build();
+  const response = await send(request);
 
-  const content = response.content.replace(/[\u0000-\u001F]/g, "");
+  let content = await response.toString();
+  content = content.replace(/[\u0000-\u001F]/g, "");
+
   const { restaurants } = JSON.parse(content);
-
   return restaurants.map(decodeRestaurant);
 };
 

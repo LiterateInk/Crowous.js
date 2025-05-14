@@ -1,13 +1,13 @@
-import { defaultFetcher, type Fetcher } from "@literate.ink/utilities";
-import { Request } from "~/core/request";
+import type { Home } from "~/models";
+import { HttpRequest, send } from "schwi";
+import { BASE_URL } from "~/core/constans";
 import { parseXML } from "~/core/xml";
 import { decodeHome } from "~/decoders/home";
-import type { Home } from "~/models";
 
-export const housing = async (identifier: string, fetcher: Fetcher = defaultFetcher): Promise<Array<Home>> => {
-  const request = new Request(`${identifier}/${identifier}-logement.xml`);
-  const response = await fetcher(request);
-  const content = parseXML(response.content);
+export const housing = async (identifier: string): Promise<Array<Home>> => {
+  const request = new HttpRequest.Builder(BASE_URL + `${identifier}/${identifier}-logement.xml`).build();
+  const response = await send(request);
 
+  const content = parseXML(await response.toString());
   return content.root.residence.map(decodeHome);
 };
