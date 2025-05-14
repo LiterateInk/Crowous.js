@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: iENT
+title: Crowous
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -9,7 +9,7 @@ authors:
     website: "https://literate.ink"
     email: contact@literate.ink
 repository-code: "https://github.com/LiterateInk/Crowous.js"
-url: "https://ient.docs.literate.ink/"
+url: "https://crowous.docs.literate.ink/"
 repository-artifact: "https://www.npmjs.com/package/crowous"
 abstract: >-
   A wrapper for the Crous Mobile internal API.
