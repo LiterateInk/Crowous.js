@@ -7,7 +7,7 @@
     "moduleResolution": "Bundler",
     "paths": {
       "~/*": ["./src/*"],
-      "!/*": ["./tests/*"]
+      "crowous": ["./src/index.ts"]
     },
 
     "strict": true,
