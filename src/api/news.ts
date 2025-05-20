@@ -1,13 +1,16 @@
-import type { NewsArticle } from "~/models";
+import type * as definitions from "~/definitions";
 import { HttpRequest, send } from "schwi";
-import { BASE_URL } from "~/core/constans";
+import { BASE_URL } from "~/core/constants";
 import { parseXML } from "~/core/xml";
-import { decodeNewsArticle } from "~/decoders/news-article";
+import { Article } from "~/models";
 
-export const news = async (identifier: string): Promise<Array<NewsArticle>> => {
+export const news = async (identifier: string): Promise<Array<Article>> => {
   const request = new HttpRequest.Builder(BASE_URL + `${identifier}/externe/actu.xml`).build();
   const response = await send(request);
 
-  const content = parseXML(await response.toString());
-  return content.root.article.map(decodeNewsArticle);
+  const content = parseXML<{
+    article: Array<definitions.article>;
+  }>(await response.toString());
+
+  return content.root.article.map(Article.fromJSON);
 };

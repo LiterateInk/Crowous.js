@@ -1,14 +1,16 @@
-import type { Feed } from "~/models";
+import type * as definitions from "~/definitions";
+
 import { HttpRequest, send } from "schwi";
-import { BASE_URL } from "~/core/constans";
-import { decodeFeed } from "~/decoders/feed";
+import { BASE_URL } from "~/core/constants";
+import { Feed } from "~/models";
 
 export const feeds = async (): Promise<Array<Feed>> => {
   const request = new HttpRequest.Builder(BASE_URL + "feeds.json").build();
   const response = await send(request);
-  const { results } = await response.toJSON<{
-    results: Array<any>;
+
+  const json = await response.toJSON<{
+    results: Array<definitions.feed>;
   }>();
 
-  return results.map(decodeFeed);
+  return json.results.map(Feed.fromJSON);
 };
