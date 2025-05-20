@@ -1,5 +1,5 @@
 import { HttpRequest, send } from "schwi";
-import { BASE_URL } from "~/core/constans";
+import { BASE_URL } from "~/core/constants";
 import { decodeRestaurant } from "~/decoders/restaurant";
 import { type Meal, Moment, type Restaurant } from "~/models";
 
