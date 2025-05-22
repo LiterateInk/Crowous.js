@@ -1,9 +1,8 @@
-import * as crous from "crowous";
+import { getAccommodations } from "crowous";
 
-const identifier = "bordeaux";
-const houses = await crous.accommodations(identifier);
+const accommodations = await getAccommodations("bordeaux");
 
-for (const home of houses) {
+for (const home of accommodations) {
   // When the address is not available, we show the longitude and latitude directly.
   console.log(`[${home.area}]: ${home.title} (${home.address ?? `lon: ${home.longitude}, lat: ${home.latitude}`})`);
 }

@@ -1,6 +1,6 @@
-import * as crous from "crowous";
+import { getFeeds } from "crowous";
 
-const feeds = await crous.feeds();
+const feeds = await getFeeds();
 
 for (const feed of feeds) {
   console.log(`${feed.name} (${feed.identifier})`);

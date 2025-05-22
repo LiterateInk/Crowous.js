@@ -41,10 +41,10 @@
   },
   "dependencies": {
     "fast-xml-parser": "^5.2.3",
-    "schwi": "^0.3.1"
+    "schwi": "^0.4.0"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.13",
+    "@types/bun": "^1.2.14",
     "@vexcited/eslint-config": "^0.1.1",
     "dotenv": "^16.4.7",
     "eslint": "^9.26.0",
