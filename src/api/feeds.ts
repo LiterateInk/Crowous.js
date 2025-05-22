@@ -4,7 +4,7 @@ import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
 import { Feed } from "~/models";
 
-export const feeds = async (): Promise<Array<Feed>> => {
+export const getFeeds = async (): Promise<Array<Feed>> => {
   const request = new HttpRequest.Builder(BASE_URL + "feeds.json").build();
   const response = await send(request);
 
