@@ -14,14 +14,6 @@ export const restaurants = async (identifier: string): Promise<Array<Restaurant>
   return restaurants.map(decodeRestaurant);
 };
 
-export const isRestaurantOpen = (restaurant: Restaurant, dayIndex: number, moment: Moment): boolean => {
-  const day = restaurant.opening.split(",")[dayIndex];
-  const momentAsINT = moment === Moment.LUNCH ? 1 : moment === Moment.MORNING ? 0 : 2;
-  const opening = day[momentAsINT];
-
-  return opening === "1";
-};
-
 export const meals = (restaurant: Restaurant, date = new Date()): Array<Meal> | undefined => {
   const currentSTR = date.toLocaleDateString();
   return restaurant.menus.find((menu) => menu.date.toLocaleDateString() === currentSTR)?.meals;
