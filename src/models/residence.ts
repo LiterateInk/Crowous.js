@@ -18,14 +18,14 @@ export class Residence {
     public localServices: string,
     public longitude: number,
     public phone: null | string,
-    public shortDescription: null | string,
+    public description: null | string,
     public title: string,
     public troubleshootingUrl: null | string,
     public virtualVisitUrl: null | string,
     public websiteUrl: null | string
   ) {}
 
-  static fromJSON(json: definitions.residence): Residence {
+  static fromXML(json: definitions.residence): Residence {
     return new Residence(
       json.address || null,
       json.albumUrl || null,

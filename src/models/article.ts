@@ -10,7 +10,7 @@ export class Article {
     public title: string
   ) {}
 
-  static fromJSON(json: definitions.article): Article {
+  static fromXML(json: definitions.article): Article {
     return new Article(
       json.category,
       json.content,

@@ -7,9 +7,9 @@ export const getNews = async (identifier: string): Promise<Array<Article>> => {
   const request = new HttpRequest.Builder(BASE_URL + `${identifier}/externe/actu.xml`).build();
   const response = await send(request);
 
-  const content = await response.toXML<{
+  const xml = await response.toXML<{
     article: Array<definitions.article>;
   }>();
 
-  return content.root.article.map(Article.fromJSON);
+  return xml.root.article.map(Article.fromXML);
 };

@@ -1,5 +1,4 @@
 import type * as definitions from "~/definitions";
-
 import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
 import { Feed } from "~/models";

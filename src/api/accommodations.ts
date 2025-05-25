@@ -7,9 +7,9 @@ export const getAccommodations = async (identifier: string): Promise<Array<Resid
   const request = new HttpRequest.Builder(BASE_URL + `${identifier}/${identifier}-logement.xml`).build();
   const response = await send(request);
 
-  const content = await response.toXML<{
+  const xml = await response.toXML<{
     residence: Array<definitions.residence>;
   }>();
 
-  return content.root.residence.map(Residence.fromJSON);
+  return xml.root.residence.map(Residence.fromXML);
 };
