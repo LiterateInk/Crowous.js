@@ -1,7 +1,7 @@
-import * as crous from "crowous";
+import { getMealsForDate, getRestaurantsFrom } from "crowous";
 
 const identifier = "limoges";
-const restaurants = await crous.restaurants(identifier);
+const restaurants = await getRestaurantsFrom(identifier);
 
 for (const restaurant of restaurants) {
   if (restaurant.title !== "RU La Borie") continue;
@@ -12,9 +12,8 @@ for (const restaurant of restaurants) {
   const payment_methods_as_str = restaurant.paymentMethods.join(", ");
   console.log("Payment Methods:", payment_methods_as_str);
 
-  // Get the meals for today, you can change the date
-  // using the second parameter.
-  const meals = crous.meals(restaurant);
+  // Get the meals for today.
+  const meals = getMealsForDate(restaurant, new Date());
   if (typeof meals === "undefined") {
     console.log("Meals data is unavailable for the given date.");
   }

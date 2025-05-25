@@ -1,6 +1,6 @@
-import { getNews } from "crowous";
+import { getNewsFrom } from "crowous";
 
-const news = await getNews("limoges");
+const news = await getNewsFrom("limoges");
 
 for (const article of news) {
   console.log(`[${article.category}]: ${article.title}, published @ ${article.publicationDate.toLocaleDateString()}`);

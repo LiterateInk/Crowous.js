@@ -3,7 +3,7 @@ import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
 import { Service } from "~/models";
 
-export const getServices = async (identifier: string): Promise<Array<Service>> => {
+export async function getServicesFrom(identifier: string): Promise<Array<Service>> {
   const request = new HttpRequest.Builder(BASE_URL + `${identifier}/${identifier}-online.xml`).build();
   const response = await send(request);
 

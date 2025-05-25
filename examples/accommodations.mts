@@ -1,6 +1,6 @@
-import { getAccommodations } from "crowous";
+import { getAccommodationsFrom } from "crowous";
 
-const accommodations = await getAccommodations("bordeaux");
+const accommodations = await getAccommodationsFrom("bordeaux");
 
 for (const home of accommodations) {
   // When the address is not available, we show the longitude and latitude directly.

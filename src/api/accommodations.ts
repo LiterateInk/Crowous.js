@@ -3,7 +3,7 @@ import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
 import { Residence } from "~/models";
 
-export const getAccommodations = async (identifier: string): Promise<Array<Residence>> => {
+export async function getAccommodationsFrom(identifier: string): Promise<Array<Residence>> {
   const request = new HttpRequest.Builder(BASE_URL + `${identifier}/${identifier}-logement.xml`).build();
   const response = await send(request);
 

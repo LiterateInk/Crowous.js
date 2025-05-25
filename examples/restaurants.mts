@@ -1,6 +1,6 @@
-import * as crous from "crowous";
+import { getRestaurantsFrom } from "crowous";
 
-const restaurants = await crous.restaurants("limoges");
+const restaurants = await getRestaurantsFrom("limoges");
 
 for (const restaurant of restaurants) {
   console.log(restaurant.title);
