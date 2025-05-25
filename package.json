@@ -41,16 +41,15 @@
   },
   "dependencies": {
     "fast-xml-parser": "^5.2.3",
-    "schwi": "^0.4.0"
+    "schwi": "^0.5.0"
   },
   "devDependencies": {
     "@types/bun": "^1.2.14",
     "@vexcited/eslint-config": "^0.1.1",
-    "dotenv": "^16.4.7",
-    "eslint": "^9.26.0",
+    "eslint": "^9.27.0",
     "jiti": "^2.4.2",
     "terser": "^5.39.1",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   }
 }
