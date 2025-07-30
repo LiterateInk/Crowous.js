@@ -24,7 +24,7 @@ export class RestaurantDTO {
       this.json.opening,
       this.json.operationalhours,
       this.json.payment.map((method) => new PaymentMethodDTO(method.name).toModel()),
-      new ImageDTO(this.json.photo).toModel(),
+      this.json.photo.src ? new ImageDTO(this.json.photo).toModel() : null,
       this.json.shortdesc,
       this.json.title,
       this.json.wifi

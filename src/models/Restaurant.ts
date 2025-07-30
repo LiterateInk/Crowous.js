@@ -50,7 +50,7 @@ export class Restaurant {
     public opening: string,
     public operationalHours: null | string,
     public paymentMethods: Array<PaymentMethod>,
-    public photo: Image,
+    public photo: Image | null,
     public shortDescription: string,
     public title: string,
     /**

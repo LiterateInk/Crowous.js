@@ -1,0 +1,202 @@
+[
+  {
+    "id": 802,
+    "title": "KIOSQUE ENSIL",
+    "lat": 45.86048408005619,
+    "lon": 1.295423074950527,
+    "area": "Limoges (87)",
+    "adresse": "Ester Technopole 16 rue Atlantis 87000 LIMOGES",
+    "opening": "010,010,010,010,010,000,000",
+    "closing": "0",
+    "type": "Cafétéria",
+    "accessibility": true,
+    "wifi": false,
+    "shortdesc": "Situé à proximité du RU de l'ENSIL et de l'ENSCI.",
+    "description": "Situé à proximité du RU de l'ENSIL et de l'ENSCI, le Kiosque offre une alternative à la restauration traditionnelle en proposant de la vente à emporter.",
+    "access": "Bus 10",
+    "operationalhours": "Du lundi au vendredi de 11h30 à 13h30.",
+    "contact": {
+      "tel": "05 19 56 13 93",
+      "email": "resto-u.menot@crous-limoges.fr"
+    },
+    "crousandgo": "",
+    "photo": {
+      "src": "https://www.crous-limoges.fr/wp-content/uploads/sites/21/2015/10/Kiosque-ENSIL.jpg",
+      "alt": "KIOSQUE ENSIL"
+    },
+    "payment": [
+      {
+        "name": "Espèce"
+      },
+      {
+        "name": "Carte bancaire"
+      },
+      {
+        "name": "IZLY"
+      }
+    ],
+    "menus": [
+      {
+        "date": "2025-07-28",
+        "meal": [
+          {
+            "name": "midi",
+            "foodcategory": [
+              {
+                "name": "CAFETERIA",
+                "dishes": [
+                  {
+                    "name": "Boissons chaudes"
+                  },
+                  {
+                    "name": "Boissons fraiches"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-07-29",
+        "meal": [
+          {
+            "name": "midi",
+            "foodcategory": [
+              {
+                "name": "CAFETERIA",
+                "dishes": [
+                  {
+                    "name": "Boissons chaudes"
+                  },
+                  {
+                    "name": "Boissons fraiches"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-07-30",
+        "meal": [
+          {
+            "name": "midi",
+            "foodcategory": [
+              {
+                "name": "CAFETERIA",
+                "dishes": [
+                  {
+                    "name": "Boissons chaudes"
+                  },
+                  {
+                    "name": "Boissons fraiches"
+                  },
+                  {
+                    "name": "Salades"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 208,
+    "title": "RU Thérèse Menot",
+    "lat": 45.8138692,
+    "lon": 1.2288619,
+    "area": "Limoges (87)",
+    "adresse": "24 allée de la cornue 87000 Limoges",
+    "opening": "010,010,010,010,010,010,000",
+    "closing": "0",
+    "type": "Restaurant",
+    "accessibility": true,
+    "wifi": true,
+    "shortdesc": "Au sein du campus de la FLSH",
+    "description": "Au sein du campus de la FLSH, à proximité du campus Marcland.",
+    "access": "Bus lignes 5 - 10 - 12 - 14",
+    "operationalhours": "du lundi au vendredi de 11h30 à 14h00<br/><br/>",
+    "contact": {
+      "tel": "05 19 56 13 44",
+      "email": "resto-u.menot@crous-limoges.fr"
+    },
+    "crousandgo": "",
+    "photo": {
+      "src": "",
+      "alt": "RU Thérèse Menot"
+    },
+    "payment": [
+      {
+        "name": "Espèce"
+      },
+      {
+        "name": "Carte bancaire"
+      },
+      {
+        "name": "IZLY"
+      }
+    ],
+    "menus": []
+  },
+  {
+    "id": 371,
+    "title": "RU Brive",
+    "lat": 45.1566944,
+    "lon": 1.511374,
+    "area": "Brive (19)",
+    "adresse": "21 rue André DEVAUD",
+    "opening": "010,010,010,010,010,000,000",
+    "closing": "0",
+    "type": "Restaurant",
+    "accessibility": true,
+    "wifi": true,
+    "shortdesc": "Situé à proximité immédiate des établissements scolaires (IUT Fac des sciences et de droit, Lycées, ...) et sur le site de la résidence universitaire.",
+    "description": "Situé à proximité immédiate des établissements scolaires (IUT Fac des sciences et de droit, Lycées, ...) et sur le site de la résidence universitaire.",
+    "access": "Bus 1",
+    "operationalhours": "Du lundi au vendredi:<br/>11h30-14h00.<br/>",
+    "contact": {
+      "tel": "05 55 87 07 17 ",
+      "email": "resto-u.brive@crous-limoges.fr"
+    },
+    "crousandgo": "",
+    "photo": {
+      "src": "http://www.crous-limoges.fr/wp-content/uploads/sites/21/2014/06/brive-self.gif",
+      "alt": "RU Brive"
+    },
+    "payment": [
+      {
+        "name": "Espèce"
+      },
+      {
+        "name": "Carte bancaire"
+      },
+      {
+        "name": "IZLY"
+      }
+    ],
+    "menus": [
+      {
+        "date": "2025-07-28",
+        "meal": [
+          {
+            "name": "midi",
+            "foodcategory": [
+              {
+                "name": "informations",
+                "dishes": [
+                  {
+                    "name": "En fonction de l'affluence, ce menu est susceptible de modification en cours de service."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
