@@ -1,4 +1,5 @@
 export class Service {
+  /** @internal */
   constructor(
     public id: string,
     public imageUrl: string,

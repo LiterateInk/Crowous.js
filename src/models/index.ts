@@ -1,5 +1,6 @@
 export * from "./Article";
 export * from "./Contact";
+export * from "./Day";
 export * from "./Feed";
 export * from "./FoodCategory";
 export * from "./Image";

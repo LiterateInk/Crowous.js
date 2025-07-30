@@ -1,4 +1,5 @@
 export class Residence {
+  /** @internal */
   constructor(
     public address: null | string,
     public albumUrl: null | string,

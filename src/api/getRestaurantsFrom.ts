@@ -4,6 +4,24 @@ import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
 import { RestaurantDTO } from "~/dto";
 
+/**
+ * Get all {@link Restaurant|restaurants} for a given identifier.
+ *
+ * @param identifier - Where we should look for restaurants.
+ * @returns A list of all {@link Restaurant|restaurants} for a given identifier.
+ *
+ * @example
+ * const restaurants = await getRestaurantsFrom("bordeaux");
+ *
+ * for (const restaurant of restaurants) {
+ *   console.log(restaurant.title, restaurant.address);
+ * }
+ *
+ * @example
+ * const feeds = await getFeeds();
+ * const restaurants = await getRestaurantsFrom(feeds[0].identifier);
+ * // ...
+ */
 export async function getRestaurantsFrom(identifier: string): Promise<Array<Restaurant>> {
   const request = new HttpRequest.Builder(BASE_URL + `${identifier}/externe/crous-${identifier}.min.json`).build();
   const response = await send(request);

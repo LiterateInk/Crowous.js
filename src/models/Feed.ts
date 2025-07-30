@@ -1,10 +1,11 @@
 import type { Article, Residence, Restaurant, Service } from "~/models";
-import { getAccommodationsFrom, getNewsFrom, getRestaurantsFrom, getServicesFrom } from "~/api";
+import { getNewsFrom, getResidencesFrom, getRestaurantsFrom, getServicesFrom } from "~/api";
 
 /**
  * A feed is a CROUS instance in France.
  */
 export class Feed {
+  /** @internal */
   constructor(
     /**
      * Internal identifier of the CROUS instance,
@@ -24,17 +25,17 @@ export class Feed {
   ) {}
 
   /**
-   * Get accommodations for the current feed.
-   */
-  getAccommodations(): Promise<Array<Residence>> {
-    return getAccommodationsFrom(this.identifier);
-  }
-
-  /**
    * Get news for the current feed.
    */
   getNews(): Promise<Array<Article>> {
     return getNewsFrom(this.identifier);
+  }
+
+  /**
+   * Get residences for the current feed.
+   */
+  getResidences(): Promise<Array<Residence>> {
+    return getResidencesFrom(this.identifier);
   }
 
   /**

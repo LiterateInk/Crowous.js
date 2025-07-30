@@ -5,23 +5,24 @@ import { BASE_URL } from "~/core/constants";
 import { ResidenceDTO } from "~/dto";
 
 /**
+ * Get all {@link Residence|residences} for a given identifier.
  *
- * @param identifier - Where we should look for accommodations.
- * @returns Accommodations for a given identifier.
+ * @param identifier - Where we should look for residences.
+ * @returns A list of all {@link Residence|residences} for a given identifier.
  *
  * @example
- * const accommodations = await getAccommodationsFrom("bordeaux");
+ * const residences = await getResidencesFrom("bordeaux");
  *
- * for (const home of accommodations) {
+ * for (const home of residences) {
  *   console.log(`[${home.area}]: ${home.title}`);
  * }
  *
  * @example
  * const feeds = await getFeeds();
- * const accommodations = await getAccommodationsFrom(feeds[0].identifier);
+ * const residences = await getResidencesFrom(feeds[0].identifier);
  * // ...
  */
-export async function getAccommodationsFrom(identifier: string): Promise<Array<Residence>> {
+export async function getResidencesFrom(identifier: string): Promise<Array<Residence>> {
   const request = new HttpRequest.Builder(BASE_URL + `${identifier}/${identifier}-logement.xml`).build();
   const response = await send(request);
 
