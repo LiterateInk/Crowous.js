@@ -1,0 +1,16 @@
+[
+  {
+    "id": "12",
+    "image": "https://admin-v2.crous-mobile.fr//media/onlineservice/20151022_logo_izly_big.png",
+    "title": "Payer avec Izly",
+    "short_desc": "Accéder à mon compte",
+    "link": "http://www.izly.fr/"
+  },
+  {
+    "id": "79",
+    "image": "https://admin-v2.crous-mobile.fr//media/onlineservice/20171219_FB-f-Logo__blue_50.png",
+    "title": "Suivez-nous sur Facebook !",
+    "short_desc": "",
+    "link": "http://www.facebook.com/crous.debordeauxaquitaine"
+  }
+]
