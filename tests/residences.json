@@ -1,0 +1,62 @@
+[
+  {
+    "infos": "<p>Tram B - Arrêt Arts et Métiers<br />Ligne 87 et Corol 34 Arrêt Village 1</p>",
+    "services": "<p>some services for you!</p>",
+    "contact": "<p>Village 1 rénové<br /></strong>Campus Talence</p>",
+    "address": "Avenue de Collégno, 33400 Talence",
+    "mail": "residences.campus-talence@crous-bordeaux.fr",
+    "phone": "05 56 80 67 68",
+    "openingHours": "",
+    "internetUrl": "https://selfcare.wifirst.net/sessions/new",
+    "appointmentUrl": "",
+    "virtualVisitUrl": "",
+    "crousAndGoUrl": "",
+    "albumUrl": "",
+    "bookingUrl": "https://trouverunlogement.lescrous.fr/",
+    "troubleshootingUrl": "https://linktr.ee/crous_bordeaux_reparation",
+    "house_services": {
+      "house_service": [
+        "Accessible PMR",
+        "Parking PMR"
+      ]
+    },
+    "images": {
+      "url": [
+        "https://admin-v2.crous-mobile.fr//media/house/20221130_7bb95e8_4.jpg",
+        "https://admin-v2.crous-mobile.fr//media/house/20221130_d7b33c8_3.jpg",
+        "https://admin-v2.crous-mobile.fr//media/house/20221130_a839e77_2.jpg",
+        "https://admin-v2.crous-mobile.fr//media/house/20221130_22b92ca_1.jpg"
+      ]
+    },
+    "id": "1",
+    "title": "Village rénové",
+    "short_desc": "Le Village 1 est constituée de 6 bâtiments construits en 1965 et entièrement rénovés entre 2008 et 2014.",
+    "lat": "44.8069763184",
+    "lon": "-0.6032860279",
+    "zone": "Talence"
+  },
+  {
+    "infos": "Very useful information from here.",
+    "services": "Some local services, very interesting.",
+    "contact": "Résidence La Boétie, Campus Bordeaux",
+    "address": "",
+    "mail": "budos-secretariat@crous-bordeaux.fr",
+    "phone": "",
+    "openingHours": "<p>8h-18h</p>",
+    "internetUrl": "",
+    "appointmentUrl": "",
+    "virtualVisitUrl": "",
+    "crousAndGoUrl": "",
+    "albumUrl": "",
+    "bookingUrl": "",
+    "troubleshootingUrl": "",
+    "house_services": "",
+    "images": "",
+    "id": "2",
+    "title": "Résidence La Boétie",
+    "short_desc": "",
+    "lat": "44.835246",
+    "lon": "-0.571782",
+    "zone": "Bordeaux"
+  }
+]
