@@ -2,6 +2,7 @@ import { deserializeWith, rename, t, u } from "desero";
 
 /**
  * Contact information.
+ * @hideconstructor
  */
 export class Contact {
   @deserializeWith(u.falsyToNull)
