@@ -1,10 +1,20 @@
+import { deserializeWith, rename, t, u } from "desero";
+
+/**
+ * @hideconstructor
+ */
 export class Service {
-  /** @internal */
-  constructor(
-    public id: string,
-    public imageUrl: string,
-    public description: null | string,
-    public title: string,
-    public url: string
-  ) {}
+  @deserializeWith(u.falsyToNull)
+  @rename("short_desc")
+  description = t.option(t.string());
+
+  id = t.string();
+
+  @rename("image")
+  imageUrl = t.string();
+
+  title = t.string();
+
+  @rename("link")
+  url = t.string();
 }

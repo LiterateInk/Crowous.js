@@ -1,4 +1,4 @@
-import { getRestaurantsFrom, Moment, PaymentMethod } from "crowous";
+import { getRestaurantsFrom } from "crowous";
 
 (async () => {
   const restaurants = await getRestaurantsFrom("limoges");
@@ -9,7 +9,7 @@ import { getRestaurantsFrom, Moment, PaymentMethod } from "crowous";
     console.log(`Found ${restaurant.title} (kind: ${restaurant.kind})`);
     console.log("->", restaurant.address);
 
-    const paymentMethods = restaurant.paymentMethods.map((method) => PaymentMethod[method]).join(", ");
+    const paymentMethods = restaurant.paymentMethods.join(", ");
     console.log("Payment Methods:", paymentMethods);
 
     // Get the meals for today.
@@ -23,7 +23,7 @@ import { getRestaurantsFrom, Moment, PaymentMethod } from "crowous";
     else {
       console.log("Meals:");
       for (const meal of meals) {
-        console.log(`- ${Moment[meal.moment]} (${meal.information ?? "No information"})`);
+        console.log(`- ${meal.moment} (${meal.information ?? "No information"})`);
         for (const category of meal.categories) {
           console.log(`  - ${category.name}: ${category.dishes.join(", ")}`);
         }

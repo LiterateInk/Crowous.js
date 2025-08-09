@@ -1,13 +1,17 @@
+import { deserializeWith, rename, t, u } from "desero";
+
 /**
  * An image with a description.
+ * @hideconstructor
  */
 export class Image {
-  /** @internal */
-  constructor(
-    /**
-     * Description of the linked image, probably for an `alt` attribute.
-     */
-    public description: string,
-    public href: null | string
-  ) {}
+  /**
+   * Description of the linked image, probably for an `alt` attribute.
+   */
+  @rename("alt")
+  description = t.string();
+
+  @deserializeWith(u.falsyToNull)
+  @rename("src")
+  href = t.option(t.string());
 }

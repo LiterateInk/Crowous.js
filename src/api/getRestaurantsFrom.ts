@@ -1,8 +1,8 @@
 import type * as definitions from "~/definitions";
-import type { Restaurant } from "~/models";
+import { deserialize } from "desero";
 import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
-import { RestaurantDTO } from "~/dto";
+import { Restaurant } from "~/models";
 
 /**
  * Get all {@link Restaurant|restaurants} for a given identifier.
@@ -33,5 +33,5 @@ export async function getRestaurantsFrom(identifier: string): Promise<Array<Rest
     restaurants: Array<definitions.restaurant>;
   };
 
-  return restaurants.map((restaurant) => new RestaurantDTO(restaurant).toDomain());
+  return restaurants.map((restaurant) => deserialize(Restaurant, restaurant));
 };

@@ -1,8 +1,8 @@
 import type * as definitions from "~/definitions";
-import type { Article } from "~/models";
+import { deserialize } from "desero";
 import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
-import { ArticleDTO } from "~/dto";
+import { Article } from "~/models";
 
 /**
  * Get all {@link Article|articles} for a given identifier.
@@ -30,5 +30,5 @@ export async function getNewsFrom(identifier: string): Promise<Array<Article>> {
     article: Array<definitions.article>;
   }>();
 
-  return xml.root.article.map((article) => new ArticleDTO(article).toModel());
+  return xml.root.article.map((article) => deserialize(Article, article));
 };

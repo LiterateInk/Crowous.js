@@ -1,28 +1,31 @@
 import type { Article, Residence, Restaurant, Service } from "~/models";
+import { deserializeWith, rename, t } from "desero";
 import { getNewsFrom, getResidencesFrom, getRestaurantsFrom, getServicesFrom } from "~/api";
 
 /**
  * A feed is a CROUS instance in France.
+ * @hideconstructor
  */
 export class Feed {
-  /** @internal */
-  constructor(
-    /**
-     * Internal identifier of the CROUS instance,
-     * will be used for further requests.
-     */
-    public identifier: string,
+  /**
+   * Internal identifier of the CROUS instance,
+   * will be used for further requests.
+   */
+  @deserializeWith((url: string) => url.split("/")[4])
+  @rename("url")
+  identifier = t.string();
 
-    /**
-     * Not sure what is this for, it is always on `false`.
-     */
-    public isDefault: boolean,
+  /**
+   * Not sure what is this for, it is always on `false`.
+   */
+  @rename("is_default")
+  isDefault = t.boolean();
 
-    /**
-     * Name of the CROUS instance.
-     */
-    public name: string
-  ) {}
+  /**
+   * Name of the CROUS instance.
+   */
+  @deserializeWith((name: string) => name.replace("FLUX ", ""))
+  name = t.string();
 
   /**
    * Get news for the current feed.

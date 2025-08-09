@@ -1,10 +1,11 @@
 import news from "@!/news.json";
 import { describe, expect, it } from "bun:test";
-import { ArticleDTO } from "./ArticleDTO";
+import { deserialize } from "desero";
+import { Article } from "~/models";
 
 describe("ArticleDTO", () => {
   it("should decode [0] to model properly", () => {
-    const article = new ArticleDTO(news[0]).toModel();
+    const article = deserialize(Article, news[0]);
     expect(article.id).toBe("a1");
     expect(article.publishedAt).toEqual(new Date("2022-07-01"));
     expect(article.category).toBe("restos");
@@ -13,7 +14,7 @@ describe("ArticleDTO", () => {
   });
 
   it("should decode [1] to model properly", () => {
-    const article = new ArticleDTO(news[1]).toModel();
+    const article = deserialize(Article, news[1]);
     expect(article.id).toBe("a2");
     expect(article.publishedAt).toEqual(new Date("2021-07-21"));
     expect(article.category).toBe("aides");

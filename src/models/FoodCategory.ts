@@ -1,17 +1,18 @@
+import { deserializeWith, t, u } from "desero";
+
 /**
  * A category of a meal.
+ * @hideconstructor
  */
 export class FoodCategory {
-  /** @internal */
-  constructor(
-    /**
-     * All dishes available in this category.
-     */
-    public dishes: Array<string>,
+  /**
+   * All dishes available in this category.
+   */
+  @deserializeWith(u.pick("name"))
+  dishes = t.array(t.string());
 
-    /**
-     * Name of the category.
-     */
-    public name: string
-  ) {}
+  /**
+   * Name of the category.
+   */
+  name = t.string();
 }

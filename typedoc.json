@@ -5,7 +5,7 @@
   "customFooterHtml": "<a href=\"https://www.netlify.com\"><img src=\"https://www.netlify.com/assets/badges/netlify-badge-dark.svg\" alt=\"Deploys by Netlify\" /></a>",
   "entryPoints": ["src/index.ts"],
   "basePath": "src",
-  "excludeInternal": true,
+  "plugin": ["typedoc-plugin-remove-3dots-default-value"],
   "navigationLinks": {
     "Website": "https://crowous.docs.literate.ink/",
     "GitHub": "https://github.com/LiterateInk/Crowous.js",

@@ -1,8 +1,8 @@
 import type * as definitions from "~/definitions";
-import type { Feed } from "~/models";
+import { deserialize } from "desero";
 import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
-import { FeedDTO } from "~/dto";
+import { Feed } from "~/models";
 
 /**
  * Get all available {@link Feed|feeds}, so every CROUS instance in France.
@@ -19,5 +19,5 @@ export async function getFeeds(): Promise<Array<Feed>> {
     results: Array<definitions.feed>;
   }>();
 
-  return json.results.map((feed) => new FeedDTO(feed).toDomain());
+  return json.results.map((feed) => deserialize(Feed, feed));
 };

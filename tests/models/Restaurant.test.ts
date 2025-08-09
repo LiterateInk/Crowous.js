@@ -1,11 +1,11 @@
 import restaurants from "@!/restaurants.json";
 import { describe, expect, it } from "bun:test";
-import { PaymentMethod, RestaurantKind } from "~/models";
-import { RestaurantDTO } from "./RestaurantDTO";
+import { deserialize } from "desero";
+import { PaymentMethod, Restaurant, RestaurantKind } from "~/models";
 
 describe("RestaurantDTO", () => {
   it("should decode [0] to domain properly", () => {
-    const restaurant = new RestaurantDTO(restaurants[0]).toDomain();
+    const restaurant = deserialize(Restaurant, restaurants[0]);
     expect(restaurant.id).toBe(802);
     expect(restaurant.title).toBe("KIOSQUE ENSIL");
     expect(restaurant.latitude).toBe(45.86048408005619);
@@ -39,7 +39,7 @@ describe("RestaurantDTO", () => {
   });
 
   it("should decode [1] to domain properly", () => {
-    const restaurant = new RestaurantDTO(restaurants[1]).toDomain();
+    const restaurant = deserialize(Restaurant, restaurants[1]);
     expect(restaurant.id).toBe(208);
     expect(restaurant.title).toBe("RU Thérèse Menot");
     expect(restaurant.latitude).toBe(45.8138692);
@@ -65,7 +65,10 @@ describe("RestaurantDTO", () => {
       PaymentMethod.Card,
       PaymentMethod.Izly
     ]);
-    expect(restaurant.photo).toBeNull();
+    expect(restaurant.photo).toEqual({
+      description: "RU Thérèse Menot",
+      href: null
+    });
     expect(restaurant.menus).toBeArrayOfSize(0);
   });
 });

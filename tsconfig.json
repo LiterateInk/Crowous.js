@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "ESNext",
 
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
@@ -20,6 +22,6 @@
     "skipLibCheck": true
   },
 
-  "include": ["src", "examples", "eslint.config.ts", "tsup.config.ts"],
+  "include": ["src", "examples", "tests", "eslint.config.ts", "tsup.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

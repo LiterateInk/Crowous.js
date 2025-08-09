@@ -1,8 +1,8 @@
 import type * as definitions from "~/definitions";
-import type { Residence } from "~/models";
+import { deserialize } from "desero";
 import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
-import { ResidenceDTO } from "~/dto";
+import { Residence } from "~/models";
 
 /**
  * Get all {@link Residence|residences} for a given identifier.
@@ -30,5 +30,5 @@ export async function getResidencesFrom(identifier: string): Promise<Array<Resid
     residence: Array<definitions.residence>;
   }>();
 
-  return xml.root.residence.map((residence) => new ResidenceDTO(residence).toModel());
+  return xml.root.residence.map((residence) => deserialize(Residence, residence));
 };

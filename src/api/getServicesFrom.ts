@@ -1,8 +1,8 @@
 import type * as definitions from "~/definitions";
-import type { Service } from "~/models";
+import { deserialize } from "desero";
 import { HttpRequest, send } from "schwi";
 import { BASE_URL } from "~/core/constants";
-import { ServiceDTO } from "~/dto";
+import { Service } from "~/models";
 
 /**
  * Get all {@link Service|services} for a given identifier.
@@ -30,5 +30,5 @@ export async function getServicesFrom(identifier: string): Promise<Array<Service
     online: Array<definitions.service>;
   }>();
 
-  return xml.root.online.map((service) => new ServiceDTO(service).toModel());
+  return xml.root.online.map((service) => deserialize(Service, service));
 };

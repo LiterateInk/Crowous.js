@@ -1,10 +1,11 @@
 import services from "@!/services.json";
 import { describe, expect, it } from "bun:test";
-import { ServiceDTO } from "./ServiceDTO";
+import { deserialize } from "desero";
+import { Service } from "~/models";
 
 describe("ServiceDTO", () => {
   it("should decode [0] to model properly", () => {
-    const service = new ServiceDTO(services[0]).toModel();
+    const service = deserialize(Service, services[0]);
     expect(service.id).toBe("12");
     expect(service.title).toBe("Payer avec Izly");
     expect(service.description).toBe("Accéder à mon compte");
@@ -13,7 +14,7 @@ describe("ServiceDTO", () => {
   });
 
   it("should decode [1] to model properly", () => {
-    const service = new ServiceDTO(services[1]).toModel();
+    const service = deserialize(Service, services[1]);
     expect(service.id).toBe("79");
     expect(service.title).toBe("Suivez-nous sur Facebook !");
     expect(service.description).toBeNull();

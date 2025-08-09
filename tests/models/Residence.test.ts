@@ -1,11 +1,11 @@
 import residences from "@!/residences.json";
 import { describe, expect, it } from "bun:test";
-import { ResidenceDTO } from "./ResidenceDTO";
+import { deserialize } from "desero";
+import { Residence } from "~/models";
 
 describe("ResidenceDTO", () => {
   it("should decode [0] to model properly", () => {
-    // @ts-expect-error : json is not matching exactly definitions.
-    const residence = new ResidenceDTO(residences[0]).toModel();
+    const residence = deserialize(Residence, residences[0]);
     expect(residence.address).toBe("Avenue de Collégno, 33400 Talence");
     expect(residence.albumUrl).toBeNull();
     expect(residence.appointmentUrl).toBeNull();
@@ -38,8 +38,7 @@ describe("ResidenceDTO", () => {
   });
 
   it("should decode [1] to model properly", () => {
-    // @ts-expect-error : json is not matching exactly definitions.
-    const residence = new ResidenceDTO(residences[1]).toModel();
+    const residence = deserialize(Residence, residences[1]);
     expect(residence.address).toBeNull();
     expect(residence.albumUrl).toBeNull();
     expect(residence.appointmentUrl).toBeNull();
